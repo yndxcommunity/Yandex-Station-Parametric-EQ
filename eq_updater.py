@@ -6,7 +6,7 @@ import os
 import json
 from aiohttp import ClientSession
 
-CFG_PATH = f"{os.environ.get('HOME')}/.yadata"
+CFG_PATH = os.path.join(os.environ.get('HOME'), ".yadata")
 
 class YandexStationEqUpdater():
     def __init__(self, session: yandex_session.YandexSession):
