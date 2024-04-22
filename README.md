@@ -19,7 +19,6 @@
 3. Запускаем команды поочередно в терминале / cmd
 ```sh
 # Для установки
-git clone 'https://github.com/yndxcommunity/Yandex-Station-Parametric-EQ.git'
 cd *перетащите в окно терминала распакованную папку*
 python3 -m pip install -r requirements.txt
 
