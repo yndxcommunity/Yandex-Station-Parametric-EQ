@@ -19,7 +19,7 @@
 3. Запускаем команды поочередно в терминале / cmd
 ```sh
 # Для установки
-git clone 'https://github.com/tdrkDev/Yandex-Station-Advanced-EQ.git'
+git clone 'https://github.com/yndxcommunity/Yandex-Station-Parametric-EQ.git'
 cd *перетащите в окно терминала распакованную папку*
 python3 -m pip install -r requirements.txt
 
@@ -28,24 +28,16 @@ python3 eq_updater.py
 ```
 
 ## Как создать свой пресет
-1. Скопируйте presets/sample.py в ту же папку под названием вида 'кодовоеимя_автор.py'
-    * Что за кодовые имена?
-        | Кодовое имя | Название |
-        |-------------|----------|
-        | yandexstation | Яндекс.Станция |
-        | yandexstation_2 | Яндекс.Станция Макс |
-        | yandexmini | Яндекс.Станция Мини |
-        | yandexmini_2 | Яндекс.Станция Мини 2 |
-        | yandexmicro | Яндекс.Станция Лайт |
-        | yandexmidi | Яндекс.Станция 2 |
-        | cucumber | Яндекс.Станция Миди |
-        | chiron | Яндекс.Станция Дуо Макс |
+1. Запустите create_preset.py
+    * `python3 create_preset.py`
+    * Затем откройте выведенный вам путь в текстовом редакторе
 2. Формат файла:
     ```python
     preset = {
         'author': 'имя автора',
         'description': 'описание пресета',
         'device': 'кодовое имя',
+        'use_room_correction': True / False (использовать ли Room Correction),
         'bands': [
             {
                 "freq": частота бэнда (Гц),

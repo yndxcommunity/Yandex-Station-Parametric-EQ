@@ -50,7 +50,7 @@ class YandexStationEqUpdater():
         if len(prsts) == 1:
             preset = prsts[0]
             print(f"Выбран пресет {preset['author']} - {preset['description']}")
-            self.bands = preset['bands']
+            self.preset = preset
             return True
         
         print("Выберите пресет:")
@@ -59,7 +59,7 @@ class YandexStationEqUpdater():
 
         picked_str = input('Число> ')
         picked = int(picked_str)
-        self.bands = prsts[picked]['bands']
+        self.preset = prsts[picked]
         return True
 
     async def send_cfg(self):
@@ -129,9 +129,9 @@ class YandexStationEqUpdater():
             print("Failed to get cfg")
             return
         self.cfg['equalizer'] = {
-            "bands": self.bands,
+            "bands": self.preset['bands'],
             "active_preset_id": "custom",
-            "smartEnabled": True,
+            "smartEnabled": self.preset['use_room_correction'] if 'use_room_correction' in self.preset else False,
             "enabled": True
         }
         r = await self.send_cfg()

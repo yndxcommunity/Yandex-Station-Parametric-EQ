@@ -2,6 +2,7 @@ preset = {
     'author': 'tdrkDev',
     'description': 'Less mids, more bass, a bit more highs',
     'device': 'yandexmidi',
+    'use_room_correction': True,
     'bands': [
         {
             "freq": 20,
