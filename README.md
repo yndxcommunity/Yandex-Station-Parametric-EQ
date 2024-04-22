@@ -20,10 +20,10 @@
 ```sh
 # Для установки
 cd *перетащите в окно терминала распакованную папку*
-python3 -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 # Для использования
-python3 eq_updater.py
+python eq_updater.py
 ```
 
 ## Как создать свой пресет
